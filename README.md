@@ -134,7 +134,7 @@ Ford–Johnson :
 
 7-utilise Jacobsthal pour choisir l’ordre optimal d’insertion
 
-8utilise des binary searches dans des tailles proches de : 2k − 1 afin de minimiser le nombre total de comparaisons.
+8-utilise des binary searches dans des tailles proches de : 2k − 1 afin de minimiser le nombre total de comparaisons.
 
 
 
