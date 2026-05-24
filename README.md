@@ -33,9 +33,11 @@ b devient le winner
 a devient le loser
 
 
-On obtient donc : Winners : [b d f h]
+On obtient donc : 
 
-                  Losers  : [a c e g]
+   Winners : [b d f h]
+
+   Losers  : [a c e g]
 
 
 3. Main chain et pend chain:
@@ -99,9 +101,11 @@ insertion plus optimale.
 
 9. Recherche binaire : L’insertion utilise une binary search O(logn) mais dans une fenêtre limitée grâce au winner associé.
 
-10. Ce qu’on doit faire dans ex02 : Implémenter Ford–Johnson  *une fois avec std::vector
-11. 
-                                                              *une fois avec std::deque
+10. Ce qu’on doit faire dans ex02 : Implémenter Ford–Johnson
+
+       *une fois avec std::vector
+    
+       *une fois avec std::deque
 
     Puis :
 
