@@ -141,17 +141,27 @@ Ford–Johnson :
 
 
 INPUT
+
   ↓
+  
 PAIRING
+
   ↓
+  
 COMPARE EACH PAIR
+
   ↓
+  
 WINNERS → mainChain
 
 LOSERS  → pendChain
+
   ↓
+  
 RECURSIVE SORT(mainChain)
+
   ↓
+  
 JACOBSTHAL INSERTION(pendChain)
 
 
