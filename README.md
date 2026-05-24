@@ -58,9 +58,9 @@ a ↔ b
 
 car on sait déjà que :   a<b   Donc a sera forcément placé avant b.  => Cela réduit énormément la zone de recherche.
 
-4. Tri récursif des winners : La main chain est triée récursivement : [b d f h]  -> [b f d h] -> [b d f h] ->
+4. Tri récursif des winners : La main chain est triée récursivement :
 
-jusqu’à obtenir une chaîne triée.
+   [b d f h]  -> [b f d h] -> [b d f h] -> jusqu’à obtenir une chaîne triée.
 
 
 5. Réinsertion des losers:
