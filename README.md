@@ -26,22 +26,33 @@ on compare les deux éléments.
 
 Si : a<b
 
-alors : b devient le winner
-        a devient le loser
+alors : 
+
+b devient le winner
+
+a devient le loser
+
 
 On obtient donc : Winners : [b d f h]
+
                   Losers  : [a c e g]
 
 
 3. Main chain et pend chain:
 
 Les winners forment la Main chain  :   [b d f h]
+
 Les losers forment la Pend chain   :   [a c e g] 
 
-Mais chaque loser reste associé à son winner :  a ↔ b
-                                                c ↔ d
-                                                e ↔ f
-                                                g ↔ h
+Mais chaque loser reste associé à son winner :  
+
+a ↔ b
+
+ c ↔ d
+ 
+ e ↔ f
+ 
+ g ↔ h
 
 car on sait déjà que :   a<b   Donc a sera forcément placé avant b.  => Cela réduit énormément la zone de recherche.
 
@@ -80,18 +91,25 @@ on cherche seulement AVANT b.
 Donc :
 
 moins de comparaisons
+
 recherche plus petite
+
 insertion plus optimale.
 
 
 9. Recherche binaire : L’insertion utilise une binary search O(logn) mais dans une fenêtre limitée grâce au winner associé.
 
 10. Ce qu’on doit faire dans ex02 : Implémenter Ford–Johnson  *une fois avec std::vector
+11. 
                                                               *une fois avec std::deque
 
-    Puis : *comparer les temps d’exécution
-           *afficher les performances
-           *montrer que les deux versions fonctionnent.
+    Puis :
+
+    *comparer les temps d’exécution
+    
+    *afficher les performances
+    
+    *montrer que les deux versions fonctionnent.
 
 
 Résumé final ultra condensé
@@ -99,12 +117,19 @@ Résumé final ultra condensé
 Ford–Johnson :
 
 1-crée des paires
+
 2-compare chaque paire
+
 3-garde les winners dans la main chain
+
 4-garde les losers dans la pend chain
+
 5-trie récursivement les winners
+
 6-réinsère les losers
+
 7-utilise Jacobsthal pour choisir l’ordre optimal d’insertion
+
 8utilise des binary searches dans des tailles proches de : 2k − 1 afin de minimiser le nombre total de comparaisons.
 
 
