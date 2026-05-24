@@ -2,16 +2,6 @@
 cpp09
 
 
-|                 MutantStack / stack                      | `std::list`    | `std::vector`  | `std::deque`   |
-| -------------------------------------------------------- | -------------- | -------------- | -------------- |
-| `push(x)`ajoute un élément à la fin (en haut de la pile) | `push_back(x)` | `push_back(x)` | `push_back(x)` |
-| `pop()`enlève le dernier élément (le sommet)             | `pop_back()`   | `pop_back()`   | `pop_back()`   |
-| `top()` regarde le dernier élément sans le supprimer     | `back()`       | `back()`       | `back()`       |
-| `size()` donne le nombre d’éléments                      | `size()`       | `size()`       | `size()`       |
-| `begin()` pointe sur le premier élément                  | `begin()`      | `begin()`      | `begin()`      |
-| `end()`   pointe après le dernier (fin pour boucle)      | `end()`        | `end()`        | `end()`        |
-
-
 
 Ex02:
 
@@ -148,5 +138,15 @@ Ford–Johnson :
 
 8-utilise des binary searches dans des tailles proches de : 2k − 1 afin de minimiser le nombre total de comparaisons.
 
+
+
+|                 MutantStack / stack                      | `std::list`    | `std::vector`  | `std::deque`   |
+| -------------------------------------------------------- | -------------- | -------------- | -------------- |
+| `push(x)`ajoute un élément à la fin (en haut de la pile) | `push_back(x)` | `push_back(x)` | `push_back(x)` |
+| `pop()`enlève le dernier élément (le sommet)             | `pop_back()`   | `pop_back()`   | `pop_back()`   |
+| `top()` regarde le dernier élément sans le supprimer     | `back()`       | `back()`       | `back()`       |
+| `size()` donne le nombre d’éléments                      | `size()`       | `size()`       | `size()`       |
+| `begin()` pointe sur le premier élément                  | `begin()`      | `begin()`      | `begin()`      |
+| `end()`   pointe après le dernier (fin pour boucle)      | `end()`        | `end()`        | `end()`        |
 
 
