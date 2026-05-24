@@ -166,6 +166,7 @@ JACOBSTHAL INSERTION(pendChain)
 
 
 
+
 |                 MutantStack / stack                      | `std::list`    | `std::vector`  | `std::deque`   |
 | -------------------------------------------------------- | -------------- | -------------- | -------------- |
 | `push(x)`ajoute un élément à la fin (en haut de la pile) | `push_back(x)` | `push_back(x)` | `push_back(x)` |
