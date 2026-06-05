@@ -42,7 +42,6 @@ int main (int ac, char **av)
 
     std::cout << "Time to process a range of " << P.getVectSize() << " elements with std::vector : " << P.getVectTime() << " us" << std::endl;
     std::cout << "Time to process a range of " << P.getDeqSize() << " elements with std::deque : " << P.getDeqTime() << " us" << std::endl;
-
     
     return 0;
 }
