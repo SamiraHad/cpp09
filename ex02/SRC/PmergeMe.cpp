@@ -31,27 +31,6 @@
 // b8 b7 b6
 
 // Le 11 dépasse 8, donc on le coupe à 8
-#include "PmergeMe.hpp"
-
-// fonction qui retourne l'ordre des indices à insérer.
-//  Jn ​= Jn−1​ + 2Jn−2
-//  Exemple : si tu as n = 8 losers :
-
-// losers : b1 b2 b3 b4 b5 b6 b7 b8
-// index  : 1  2  3  4  5  6  7  8
-
-// Jacobsthal donne des bornes :
-
-// 1, 3, 5, 11...
-
-// Donc on fait des groupes :
-
-// b1
-// b3 b2
-// b5 b4
-// b8 b7 b6
-
-// Le 11 dépasse 8, donc on le coupe à 8
 
 
 
