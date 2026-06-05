@@ -5,10 +5,16 @@ cpp09
 
 Ex02:
 
-<img width="1024" height="1536" alt="ChatGPT Image Jun 2, 2026, 11_36_05 AM" src="https://github.com/user-attachments/assets/130fd33b-cbfa-49d8-9232-8b2926060cd9" />
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/c0f03953-1c6c-4c17-845c-e188f10677d3" />
 
 
-<img width="1139" height="1381" alt="image" src="https://github.com/user-attachments/assets/30530e6f-1b5b-4e38-a913-0bb673643756" />
+
+<img width="1139" height="1381" alt="image" src="https://github.com/user-attachments/assets/2f92f75e-9164-4afa-98ca-70820e8601c3" />
+
+
+
+
 
 
 
