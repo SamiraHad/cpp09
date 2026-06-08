@@ -5,6 +5,38 @@ cpp09
 
 Ex02:
 
+Le but de l'exercice est d'implémenter l'algorithme de Ford–Johnson.
+
+Cet algorithme cherche à trier une séquence avec un nombre minimal de comparaisons.
+
+Le sujet demande de l'implémenter avec deux conteneurs différents : std::vector et std::deque afin de comparer leurs temps d'exécution.
+
+Tout d'abord, je vérifie l'input : je contrôle que les valeurs sont positives, qu'elles ne dépassent pas INT_MAX et qu'il n'y a pas de doublons.
+
+Ensuite, je crée des paires d'éléments et je compare chaque paire.
+
+Le plus grand élément devient un winner et est stocké dans winnerChain.
+
+Le plus petit devient un loser et est stocké dans loserChain avec son winner associé grâce à std::make_pair.
+
+Puis je trie récursivement les winners jusqu'à obtenir une main chain triée.
+
+Après cela, j'utilise la suite de Jacobsthal (1, 3, 5, 11, 21, 43, ...).
+
+Les valeurs 0, 1 et 1 sont ignorées car elles ne sont pas utiles pour l'ordre d'insertion.
+
+La suite de Jacobsthal ne sert pas à trier les losers mais à déterminer dans quel ordre les insérer.
+
+Pour chaque loser, je retrouve son winner associé avec std::find.
+
+Ensuite j'utilise std::lower_bound qui effectue une recherche binaire dans la partie de la chaîne située avant le winner.
+
+Comme je sais déjà que loser < winner, je n'ai pas besoin de chercher dans toute la chaîne.
+
+Une fois tous les losers réinsérés, la séquence est complètement triée.
+
+Enfin, je mesure le temps d'exécution pour le vector et pour le deque afin de comparer leurs performances.
+
 
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/c0f03953-1c6c-4c17-845c-e188f10677d3" />
 
