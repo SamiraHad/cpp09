@@ -39,6 +39,15 @@ class PmergeMe
 
         template<typename Container> 
         void fordJohnsonRecursivite(Container &container)
+        /*  Cette fonction implémente l'algorithme Ford–Johnson.
+
+            1. Je crée des paires.
+            2. Je compare chaque paire.
+            3. Je garde les plus grands dans winnerChain.
+            4. Je garde les plus petits dans loserChain.
+            5. Je trie récursivement les winners.
+            6. Je réinsère les losers selon l'ordre Jacobsthal.
+            7. J'utilise lower_bound pour trouver la bonne position.*/
         {
             bool impair = false;
             int oneInt;
@@ -54,7 +63,7 @@ class PmergeMe
                 impair = true;
             }
 
-            Container winnerChain;                // création des winners
+            Container winnerChain;  // création des winners
             std::vector<std::pair<int, int> > loserChain; // création des losers associés
 
             for (size_t i = 0; i + 1 < size; i += 2) // prendre 2 éléments a chaque fois
@@ -62,7 +71,7 @@ class PmergeMe
 
                 if (container[i] > container[i + 1])
                 {
-                    winnerChain.push_back(container[i]);                             // push le grand  ex [7,9]
+                    winnerChain.push_back(container[i]);  // push le grand  ex [7,9]
                     loserChain.push_back(std::make_pair(container[i + 1], container[i])); // push le petit avec son associe ex [(2,7), (1,9)]
                 }
 
@@ -83,16 +92,16 @@ class PmergeMe
                 int loser = loserChain[i].first;
                 int winner = loserChain[i].second;
 
-        // std::find : Trouver le winner associé/ localiser le winner
+                // std::find : Trouver le winner associé/ localiser le winner
                 typename Container::iterator winnerPos = std::find(winnerChain.begin(), winnerChain.end(), winner);
 
-        // std::lower_bound : Trouver où insérer le loser
-        // et pour calculer la position d'insertion du loser.
+                // std::lower_bound : Trouver où insérer le loser
+                // et pour calculer la position d'insertion du loser.
                 typename Container::iterator loserPos = std::lower_bound(winnerChain.begin(), winnerPos, loser);
                 winnerChain.insert(loserPos, loser);
             }
 
-    // traiter l'element qui reste tout seul
+            // traiter l'element qui reste tout seul
             if (impair)
             {
                 typename Container::iterator oneIntPos = std::lower_bound(winnerChain.begin(), winnerChain.end(), oneInt);
@@ -120,9 +129,11 @@ class PmergeMe
         void printAfterVector() const;
         void printAfterDeque() const;
 
+
         double getVectTime() const;
         double getDeqTime() const;
 
         size_t getVectSize() const;
         size_t getDeqSize() const;
+        
 };

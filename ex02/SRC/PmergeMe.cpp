@@ -12,30 +12,19 @@
 
 #include "PmergeMe.hpp"
 
-// fonction qui retourne l'ordre des indices à insérer.
-//  Jn ​= Jn−1​ + 2Jn−2
-//  Exemple : si tu as n = 8 losers :
+/*Le but de l'exercice est d'implémenter l'algorithme Ford–Johnson.
 
-// losers : b1 b2 b3 b4 b5 b6 b7 b8
-// index  : 1  2  3  4  5  6  7  8
+Cet algorithme cherche à trier une séquence avec un nombre minimal de comparaisons.
 
-// Jacobsthal donne des bornes :
-
-// 1, 3, 5, 11...
-
-// Donc on fait des groupes :
-
-// b1
-// b3 b2
-// b5 b4
-// b8 b7 b6
-
-// Le 11 dépasse 8, donc on le coupe à 8
+Je dois l'implémenter une fois avec std::vector et une fois avec std::deque puis comparer leurs performances.*/
 
 
 
-//suite de Jacobsthal J0 = 0, J1 = 1, Jn = Jn-1 + 2 × Jn-2    pour n ≥ 2
 std::vector<size_t> PmergeMe::Jacobsthal(size_t n) 
+/*   Cette fonction génère les nombres de Jacobsthal.
+     Ils servent à déterminer l'ordre optimal d'insertion des losers dans Ford–Johnson. 
+
+     La suite de Jacobsthal J0 = 0, J1 = 1, Jn = Jn-1 + 2 × Jn-2    pour n ≥ 2*/
 {
     std::vector<size_t> jacob;
 
@@ -52,6 +41,9 @@ std::vector<size_t> PmergeMe::Jacobsthal(size_t n)
 }
 
 std::vector<size_t> PmergeMe::getJacobSthalOrder(size_t n)
+/*  Cette fonction transforme la suite de Jacobsthal en ordre d'insertion.
+    Par exemple pour 5 losers : 0 2 1 4 3
+    Cela indique quel loser doit être inséré en premier, puis en deuxième, etc.*/
 {
     std::vector<size_t> order;
 
@@ -82,9 +74,6 @@ std::vector<size_t> PmergeMe::getJacobSthalOrder(size_t n)
     return order; // retourne 0 2 1 4 3 pou n = 5
 }
 
-
-
-
 void PmergeMe::fordJohnsonVector()
 {
     fordJohnsonRecursivite(_vect);
@@ -94,8 +83,6 @@ void PmergeMe::fordJohnsonDeque()
 {
     fordJohnsonRecursivite(_deq);
 }
-
-
 
 PmergeMe::PmergeMe() : _vectTime(0), _deqTime(0)
 {
@@ -122,10 +109,12 @@ PmergeMe::~PmergeMe()
 
 }
 
-
-
-//verifie l'input et remplir vector et deque
 bool PmergeMe::parseInput(char **av)
+/*  Cette fonction vérifie tous les arguments. 
+
+    Je contrôle que chaque argument est un nombre positif, 
+    qu'il ne dépasse pas INT_MAX et qu'il n'y a pas de doublons.
+    Ensuite j'insère les valeurs dans le vector et le deque.*/  
 {
 
     for (int i = 1; av[i]; ++i)
@@ -146,15 +135,20 @@ bool PmergeMe::parseInput(char **av)
             if (_vect[j] == value)
                 return false;
         }
-        _vect.push_back(static_cast<int>(value)); //conversion en int insersion dans vector
+        _vect.push_back(static_cast<int>(value)); //conversion en int et insersion dans vector
         _deq.push_back(static_cast<int>(value)); //conversion en int et insersion dans deque
     }
     return true;
 }
 
 
-//La fonction mesure le temps d'exécution de l'algorithme Ford–Johnson sur un std::vector.
 double PmergeMe::sortVector()
+/*  Cette fonction mesure le temps d'exécution du tri de l'algorithme Ford–Johnson sur le vector.
+
+    Je démarre le chrono,
+    j'appelle Ford–Johnson,
+    j'arrête le chrono,
+    puis je convertis le résultat en microsecondes.*/
 {
     clock_t start  = clock(); //enregistre le temps avant le trie
     
@@ -167,8 +161,8 @@ double PmergeMe::sortVector()
     return _vectTime;
 }
 
-//La fonction mesure le temps d'exécution de l'algorithme Ford–Johnson sur un std::deque.
 double PmergeMe::sortDeque()
+/*  La fonction mesure le temps d'exécution de l'algorithme Ford–Johnson sur un std::deque. */
 {
     clock_t start  = clock();
     

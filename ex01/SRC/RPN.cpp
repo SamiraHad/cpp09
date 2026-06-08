@@ -76,7 +76,7 @@ void RPN::processInput(const std::string& input)
             _RPNstack.push(number);
         }
 
-        else if(token[0] == '+' || token[0] == '-' || token[0] == '*' || token[0] == '/')
+        else if(token.length() == 1 && (token[0] == '+' || token[0] == '-' || token[0] == '*' || token[0] == '/'))
         {
             if(!calculate(token[0]))
                 return;
