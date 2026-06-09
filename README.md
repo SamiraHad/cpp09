@@ -9,7 +9,7 @@ Le but de l'exercice est d'implémenter l'algorithme de Ford–Johnson.
 
 Cet algorithme cherche à trier une séquence avec un nombre minimal de comparaisons.
 
-Le sujet demande de l'implémenter avec deux conteneurs différents : std::vector et std::deque afin de comparer leurs temps d'exécution.
+Le sujet demande de l'implémenter avec deux conteneurs différents afin de comparer leurs temps d'exécution.
 
 Tout d'abord, je vérifie l'input : je contrôle que les valeurs sont positives, qu'elles ne dépassent pas INT_MAX et qu'il n'y a pas de doublons.
 
