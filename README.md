@@ -2,11 +2,9 @@
 cpp09
 
 EX00:
-
-<img width="1183" height="1329" alt="image" src="https://github.com/user-attachments/assets/9c0ca0b2-b7f3-4f65-a8dd-39be9b9c29b7" />
+<img width="1183" height="1330" alt="image" src="https://github.com/user-attachments/assets/e37ae80d-e472-4819-8354-f6c4f2692589" />
 
 Ex02:
-
 Le but de l'exercice est d'implémenter l'algorithme de Ford–Johnson.
 
 Cet algorithme cherche à trier une séquence avec un nombre minimal de comparaisons.
