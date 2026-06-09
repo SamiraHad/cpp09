@@ -12,6 +12,10 @@
 
 #include "RPN.hpp"
 
+/*  Elle récupère les deux derniers nombres de la pile,
+    applique l'opérateur,
+    puis remet le résultat dans la pile.*/
+
 bool RPN::calculate(char op)
 {
     if(_RPNstack.size() < 2)
