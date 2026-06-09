@@ -5,7 +5,7 @@ EX00:
 <img width="1183" height="1330" alt="image" src="https://github.com/user-attachments/assets/e37ae80d-e472-4819-8354-f6c4f2692589" />
 
 Ex01:
-<img width="1109" height="1418" alt="image" src="https://github.com/user-attachments/assets/87865ac6-afbe-4da7-898c-38b46b7c353c" />
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/ac3f1039-0359-484e-9106-6e07e7c6d8a5" />
 
 Ex02:
 Le but de l'exercice est d'implémenter l'algorithme de Ford–Johnson.
