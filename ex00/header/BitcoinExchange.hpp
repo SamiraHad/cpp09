@@ -6,7 +6,7 @@
 /*   By: hsamira <hsamira@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 16:37:43 by hsamira           #+#    #+#             */
-/*   Updated: 2026/05/14 15:08:32 by hsamira          ###   ########.fr       */
+/*   Updated: 2026/06/11 10:32:03 by hsamira          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 class BitcoinExchange
 {
     private:
-        std::map<std::string, float> _databaseMap;
+        std::map<std::string, double> _databaseMap;
         bool checkDate(const std::string& date) const;//valide les dates.
-        bool checkValue(float value) const; //valide les nombres.
-        float findPriceForDate(const std::string& date) const;//quel est le prix/taux pour cette date ?
+        bool checkValue(double value) const; //valide les nombres.
+        double findPriceForDate(const std::string& date) const;//quel est le prix/taux pour cette date ?
         
     public:
         BitcoinExchange();

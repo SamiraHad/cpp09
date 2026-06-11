@@ -6,7 +6,7 @@
 /*   By: hsamira <hsamira@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 16:37:49 by hsamira           #+#    #+#             */
-/*   Updated: 2026/05/29 14:27:01 by hsamira          ###   ########.fr       */
+/*   Updated: 2026/06/11 10:45:24 by hsamira          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ bool BitcoinExchange::checkDate(const std::string& date) const
 }
 
 //verifie la valeur entrée par l’utilisateur 2011-01-03 | 3 donc 3
-bool BitcoinExchange::checkValue(float value) const
+bool BitcoinExchange::checkValue(double value) const
 {
     if(value < 0)
     {
@@ -111,9 +111,9 @@ sinon
     lower_bound
     reculer d’un élément
     retourner le prix*/
-float BitcoinExchange::findPriceForDate(const std::string& date) const
+double BitcoinExchange::findPriceForDate(const std::string& date) const
 { 
-    std::map<std::string, float>::const_iterator it;
+    std::map<std::string, double>::const_iterator it;
     
     //date exacte trouvee
     it = _databaseMap.find(date);
@@ -181,7 +181,7 @@ void BitcoinExchange::loadDatabase(const std::string& filename)
     {
         std::string date;
         std::string exchangeRateStr;
-        float exchangeRate;
+        double exchangeRate;
         
         std::istringstream iss(line);
         
@@ -222,13 +222,28 @@ void BitcoinExchange::processInputFile(const std::string& filename)
         std::string pipe;
         std::string valueString;
         
-        float value;
-        float price;
+        double value;
+        double price;
+        char extra;
         
-        iss >> date >> pipe >> valueString;
+        if(!(iss >> date >> pipe >> valueString))
+        {
+            std::cerr << "Error: bad input => " << line << std::endl; 
+            continue;
+        }
         
+        if(pipe != "|")
+        {
+            std::cerr << "Error: bad input => " << line << std::endl; 
+            continue;
+        }
         std::istringstream issValue(valueString);
-        issValue >> value;
+        
+        if(!(issValue >> value) || (issValue >> extra))
+        {
+            std::cerr << "Error: bad input => " << line << std::endl; 
+            continue;
+        }
         
         if(!checkDate(date))
         {
@@ -244,7 +259,9 @@ void BitcoinExchange::processInputFile(const std::string& filename)
             std::cerr << "Error : no price available ." << price << std::endl;
             continue;
         }
+        //std::cout << date << " => " << value << " = " << std::fixed << std::setprecision(2) << value * price << std::endl;
         std::cout << date << " => " << value << " = " << value * price << std::endl;
+        
     }
 
     file.close();
